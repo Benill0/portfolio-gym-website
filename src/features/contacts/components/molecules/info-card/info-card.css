@@ -1,0 +1,35 @@
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--surface-color);
+  border-radius: var(--rounded-lg);
+  padding: 1rem;
+  align-items: center;
+  color: var(--secondary-color);
+  border: solid 1px var(--border-on-surface);
+
+  &:hover {
+    border-color: var(--border-on-primary);
+  }
+}
+
+h2 {
+  color: var(--primary-text);
+}
+
+p {
+  text-align: center;
+  color: var(--primary-text);
+}
+
+a {
+  text-decoration: none;
+  background-color: var(--primary-text);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  width: 7rem;
+  text-align: center;
+  border-radius: var(--rounded-lg);
+}

@@ -1,0 +1,24 @@
+---
+import { CONTACT_INFO } from "@/features/contacts/static/contact";
+import { InfoCard } from "../../molecules";
+---
+
+<section class="box-animation">
+  <div class="list-info">
+    {
+      CONTACT_INFO.map((info) => (
+        <InfoCard
+          type={info.title}
+          info={info.values}
+          redirect={info.redirect}
+          action={info.action}
+          icon={info.icon}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @import url("./list-info.css");
+</style>

@@ -1,0 +1,55 @@
+---
+import { ShoppingCart } from "@/core/assets/icons";
+import type { Product } from "@/features/products/static/products";
+import { Image } from "astro:assets";
+import { Stars } from "../../molecules";
+
+type Props = Product;
+
+const {
+  category,
+  description,
+  id,
+  imageUrl,
+  name,
+  price,
+  inStock,
+  discount,
+  originalPrice,
+  rating,
+  reviewsCount,
+} = Astro.props;
+---
+
+<li class="product-card box-animation">
+  {discount && <span class="bag-discount">-{discount}%</span>}
+  <Image
+    src={imageUrl}
+    alt={name}
+    width={400}
+    height={280}
+    class="product-image"
+    loading="lazy"
+  />
+  <div class="product-details">
+    <span class="category">{category}</span>
+    <h2>{name}</h2>
+    <p class="description">{description}</p>
+    <div class="wrapper-rating">
+      <Stars rating={rating} length={5} />
+      <span class="rating">{rating}</span>
+      <span>({reviewsCount} reseñas)</span>
+    </div>
+    <div class="wrapper-price">
+      <span class="price">${price}</span>
+      {originalPrice && <span class="original-price">${originalPrice}</span>}
+    </div>
+    <button class="add-to-cart"
+      ><ShoppingCart size={16} /> Realizar pedido
+    </button>
+  </div>
+</li>
+
+<style>
+  @import url("./product.css");
+</style>

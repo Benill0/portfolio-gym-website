@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: var(--font-regular);
+}
+
+.input {
+  padding: 1rem;
+  border-radius: var(--rounded-lg);
+  background-color: var(--surface-alt-color);
+  border: solid 1px var(--border-on-muted);
+  color: var(--primary-text);
+  font-size: var(--text-base);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: none;
+  border: solid 1px var(--border-on-primary);
+}

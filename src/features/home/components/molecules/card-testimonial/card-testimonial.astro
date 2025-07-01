@@ -1,0 +1,29 @@
+---
+import { Star } from "@/core/assets/icons";
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  comment: string;
+  imageUrl: ImageMetadata;
+}
+
+const { name, comment, imageUrl } = Astro.props;
+---
+
+<article class="card-testimonial">
+  <header class="header">
+    <Image src={imageUrl} alt={name} width={68} height={68} class="avatar" />
+    <div class="wrapper-info">
+      <h3>{name}</h3>
+      <ul>
+        {Array.from({ length: 5 }, (_, index) => <Star size={14} />)}
+      </ul>
+    </div>
+  </header>
+  <p class="comment">"{comment}"</p>
+</article>
+
+<style>
+  @import url("./card-testimonial.css");
+</style>

@@ -1,0 +1,45 @@
+---
+import { Check } from "@/core/assets/icons";
+
+interface Props {
+  icon: any;
+  title: string;
+  description: string;
+  features: string[];
+  priceRange: string;
+  unit: string;
+}
+const {
+  icon: Icon,
+  title,
+  description,
+  features,
+  priceRange,
+  unit,
+} = Astro.props;
+---
+
+<article class="wrapper-card">
+  <div class="wrapper-icon">
+    <Icon size={32} />
+  </div>
+  <h3 class="title">{title}</h3>
+  <p class="description">{description}</p>
+  <ul class="features">
+    {
+      features.map((feature) => (
+        <li class="feature">
+          <Check size={16} /> <span>{feature}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="price-range">
+    <span class="price">{priceRange}</span>
+    <span>{unit}</span>
+  </p>
+</article>
+
+<style>
+  @import url("./card-training.css");
+</style>

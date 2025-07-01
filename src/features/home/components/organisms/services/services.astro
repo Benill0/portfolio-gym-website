@@ -1,0 +1,27 @@
+---
+import { SERVICES } from "@/features/home/static/services";
+import { ServiceCard } from "../../molecules";
+---
+
+<section class="wrapper-services box-animation" data-width="full">
+  <h1 class="title">Nuestros Servicios</h1>
+  <h2 class="subtitle">
+    Descubre todo lo que tenemos para ofrecerte en Morros Training
+  </h2>
+  <div class="list-services">
+    {
+      SERVICES.map((service) => (
+        <ServiceCard
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+          url={service.url}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @import url("./services.css");
+</style>

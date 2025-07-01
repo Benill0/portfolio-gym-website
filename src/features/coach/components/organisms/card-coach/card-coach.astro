@@ -1,0 +1,97 @@
+---
+import {
+  Clock,
+  Instagram,
+  People,
+  Star,
+  X,
+  Youtube,
+} from "@/core/assets/icons";
+import type { Trainer } from "@/core/static/coaches";
+import { Image } from "astro:assets";
+
+interface Props extends Trainer {}
+
+const {
+  category,
+  certifications,
+  clientsCount,
+  description,
+  gender,
+  name,
+  imageUrl,
+  rating,
+  yearsOfExperience,
+} = Astro.props;
+---
+
+<li class="card-coach box-animation">
+  <span class="rating"><Star size={16} /> {rating.toFixed(1)}</span>
+  <Image
+    src={imageUrl}
+    alt={`Imagen de ${name}`}
+    class="profile-image"
+    loading="lazy"
+    width={400}
+    height={280}
+  />
+  <div class="wrapper-content">
+    <h2>{name}</h2>
+    <span class="category">{category}</span>
+    <p class="description">{description}</p>
+    <div class="wrapper-info">
+      <p><Clock size={16} /> {yearsOfExperience} años</p>
+      <p><People size={16} />{clientsCount} clientes</p>
+    </div>
+    <h3 class="title-certifications">Certificaciones</h3>
+    <ul class="certifications">
+      {
+        certifications.map((certification) => (
+          <li>
+            <p>{certification}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="wrapper-footer">
+    <ul class="social-icons">
+      <li>
+        <a
+          href="https://www.x.com/"
+          target="_blank"
+          class="social-link"
+          aria-label="X"
+        >
+          <X width={19.5} height={16} />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="social-link"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <Instagram size={16} />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          class="social-link"
+          aria-label="Youtube"
+        >
+          <Youtube width={22.62} height={16} />
+        </a>
+      </li>
+    </ul>
+    <button> Contactar </button>
+  </div>
+</li>
+
+<style>
+  @import url("./card-coach.css");
+</style>

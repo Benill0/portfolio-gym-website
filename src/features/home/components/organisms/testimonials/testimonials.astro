@@ -1,0 +1,24 @@
+---
+import { TESTIMONIALS } from "@/features/home/static/testimonials";
+import CardTestimonial from "../../molecules/card-testimonial/card-testimonial.astro";
+---
+
+<section class="wrapper-testimonials box-animation">
+  <h1 class="title">Lo Que Dicen Nuestros Miembros</h1>
+  <h2 class="subtitle">Historias reales de transformación y éxito</h2>
+  <div class="cards-testimonials">
+    {
+      TESTIMONIALS.map((testimonial) => (
+        <CardTestimonial
+          name={testimonial.name}
+          comment={testimonial.comment}
+          imageUrl={testimonial.avatar}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @import url("./testimonials.css");
+</style>

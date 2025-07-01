@@ -1,0 +1,19 @@
+---
+import { StatsDisplay } from "@/core/components/organisms";
+import { METRICS_COACH } from "@/features/coach/static/metrics-coach";
+import Layout from "../core/components/templates/layout.astro";
+import {
+  CallToAction,
+  HeroCoach,
+  ListCoaches,
+  ServiceTraining,
+} from "../features/coach/components/organisms";
+---
+
+<Layout>
+  <HeroCoach />
+  <StatsDisplay data={METRICS_COACH} />
+  <ServiceTraining />
+  <ListCoaches />
+  <CallToAction />
+</Layout>

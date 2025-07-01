@@ -1,0 +1,24 @@
+---
+interface Props {
+  type: string;
+  info: string[];
+  redirect: string;
+  action: string;
+  icon?: any;
+}
+
+const { type, info, redirect, action, icon: Icon } = Astro.props;
+---
+
+<div class="wrapper-card">
+  <Icon size={24} class="icon" />
+  <h2>{type}</h2>
+  {info.map((item) => <p>{item}</p>)}
+  <a class="action-info" href={redirect} aria-label={"Ir a " + action}
+    >{action}
+  </a>
+</div>
+
+<style>
+  @import url("./info-card.css");
+</style>

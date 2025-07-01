@@ -1,0 +1,31 @@
+---
+import { GYM_COURSES } from "@/features/classes/static/course";
+import Course from "../course/course.astro";
+---
+
+<section>
+  <ul class="course-list">
+    {
+      GYM_COURSES.map((course) => (
+        <Course
+          imageUrl={course.imageUrl}
+          benefits={course.benefits}
+          category={course.category}
+          difficulty={course.difficulty}
+          duration={course.duration}
+          instructor={course.instructor}
+          name={course.name}
+          participants={course.participants}
+          price={course.price}
+          rating={course.rating}
+          nextSessions={course.nextSessions}
+          description={course.description}
+        />
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  @import url("./course-list.css");
+</style>

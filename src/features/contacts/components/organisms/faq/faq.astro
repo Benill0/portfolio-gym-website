@@ -1,0 +1,18 @@
+---
+import CardFaq from "../../molecules/card-faq/card-faq.astro";
+import { FAQS } from "./../../../static/faq";
+---
+
+<section class="box-animation">
+  <h1 class="title">Preguntas Frecuentes</h1>
+  <p class="subtitle">
+    Encuentra respuestas rápidas a las preguntas más comunes
+  </p>
+  <div class="list-faqs">
+    {FAQS.map((faq) => <CardFaq question={faq.question} answer={faq.answer} />)}
+  </div>
+</section>
+
+<style>
+  @import url("./faq.css");
+</style>

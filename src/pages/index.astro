@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../core/components/templates/layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import StatsDisplay from "@/core/components/organisms/stats-display/stats-display.astro";
+import { METRICS_HOME } from "@/features/home/static/metrics";
+import {
+  CallToAction,
+  HeroHome,
+  Services,
+  Testimonials,
+  WhyChooseGym,
+} from "../features/home/components/organisms";
 ---
 
 <Layout>
-	<Welcome />
+  <HeroHome />
+  <StatsDisplay data={METRICS_HOME} />
+  <WhyChooseGym />
+  <Services />
+  <Testimonials />
+  <CallToAction />
 </Layout>

@@ -1,0 +1,77 @@
+---
+import { Calendar, Clock, People, Star } from "@/core/assets/icons";
+import type { GymCourse } from "@/features/classes/static/course";
+import { Image } from "astro:assets";
+
+type Props = GymCourse;
+
+const {
+  benefits,
+  category,
+  difficulty,
+  duration,
+  instructor,
+  name,
+  participants,
+  price,
+  rating,
+  nextSessions,
+  description,
+  imageUrl,
+} = Astro.props;
+---
+
+<li class="course-card box-animation">
+  <span class="badge-difficulty" data-type={difficulty}>
+    {difficulty}
+  </span>
+  <span class="rating">
+    <Star size={16} />
+    {rating.toFixed(1)}
+  </span>
+  <Image
+    src={imageUrl}
+    alt={`Imagen de ${name}`}
+    width={400}
+    height={260}
+    loading="lazy"
+    class="course-image"
+  />
+  <div class="course-details">
+    <div class="wrapper-category">
+      <span class="badge-category">{category}</span>
+      <span class="badge-price">
+        $ {price}
+      </span>
+    </div>
+    <h2 class="name">{name}</h2>
+    <p class="description">{description}</p>
+    <p class="details"><People size={16} />Instructor: {instructor}</p>
+    <p class="details"><Clock size={16} />{duration}</p>
+    <p class="details"><People size={16} />{participants}</p>
+    <h3>Beneficios</h3>
+    <ul class="benefits">
+      {benefits.map((benefit) => <li>{benefit}</li>)}
+    </ul>
+    <h3 class="title-sessions"><Calendar size={20} /> Próximas clases</h3>
+    <ul class="next-sessions">
+      {
+        nextSessions.map((session) => (
+          <li>
+            <span>{session.date}</span>
+            <span class="availability" data-type={session.availability}>
+              {session.availability}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+    <button class="reserve-class">
+      <Calendar size={16} /> Reservar Clase
+    </button>
+  </div>
+</li>
+
+<style>
+  @import url("./course.css");
+</style>

@@ -1,0 +1,76 @@
+---
+import { hours, scheduleMap } from "@/features/classes/static/schedule";
+---
+
+<section class="box-animation" data-width="full">
+  <h1 class="title">Horario Semanal</h1>
+  <p class="subtitle">
+    Consulta nuestro horario completo y planifica tu semana de entrenamiento
+  </p>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th>Lun</th>
+          <th>Mar</th>
+          <th>Mié</th>
+          <th>Jue</th>
+          <th>Vie</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          hours.map((hora) => (
+            <tr class="hour-row">
+              <th class="hour">{hora}</th>
+              <td>
+                <span data-category={scheduleMap[hora]?.["Lunes"] || ""}>
+                  {scheduleMap[hora]?.["Lunes"] || "-"}
+                </span>
+              </td>
+              <td>
+                <span data-category={scheduleMap[hora]?.["Martes"] || ""}>
+                  {scheduleMap[hora]?.["Martes"] || "-"}
+                </span>
+              </td>
+              <td>
+                <span data-category={scheduleMap[hora]?.["Miércoles"] || ""}>
+                  {scheduleMap[hora]?.["Miércoles"] || "-"}
+                </span>
+              </td>
+              <td>
+                <span data-category={scheduleMap[hora]?.["Jueves"] || ""}>
+                  {scheduleMap[hora]?.["Jueves"] || "-"}
+                </span>
+              </td>
+              <td>
+                <span data-category={scheduleMap[hora]?.["Viernes"] || ""}>
+                  {scheduleMap[hora]?.["Viernes"] || "-"}
+                </span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <button class="button-action"> Consulta nuestro horario </button>
+</section>
+
+<style>
+  @import url("./class-calendar.css");
+</style>
+
+<script>
+  import { $ } from "@/core/lib/dom-selector";
+
+  const buttonAction = $(".button-action")!;
+
+  buttonAction.addEventListener("click", () => {
+    const link =
+      "https://wa.me/+51920849772?text=Hola,%20quisiera%20saber%20el%20horario%20de%20entrenamiento";
+
+    window.open(link, "_blank");
+  });
+</script>

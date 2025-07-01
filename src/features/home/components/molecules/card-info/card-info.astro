@@ -1,0 +1,13 @@
+---
+const { icon: Icon, title, description } = Astro.props;
+---
+
+<button class="card-info">
+  {(<Icon size={24} />)}
+  <h3 class="title">{title}</h3>
+  <p class="description">{description}</p>
+</button>
+
+<style>
+  @import url("./card-info.css");
+</style>

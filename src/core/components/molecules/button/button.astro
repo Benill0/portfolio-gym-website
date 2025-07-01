@@ -1,0 +1,21 @@
+---
+const { class: className, background = "" } = Astro.props;
+---
+
+<button class:list={"button"} is-background={background}> <slot /></button>
+
+<style>
+  .button {
+    background-color: var(--secondary-color);
+    border: 0;
+    border-radius: var(--rounded-sm);
+    color: var(--primary-text);
+    padding: 0.5rem 2.5rem;
+    font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+    font-weight: var(--font-bold);
+  }
+
+  .button[is-background="cyan"] {
+    background-color: var(--primary-color);
+  }
+</style>

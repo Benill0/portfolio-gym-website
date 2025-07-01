@@ -1,0 +1,15 @@
+.wrapper {
+  justify-self: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.slogan {
+  color: var(--primary-text);
+  font-size: clamp(var(--text-xs), 3vw, var(--text-4xl));
+}

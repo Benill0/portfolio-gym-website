@@ -1,0 +1,5 @@
+:root {
+  --font-regular: 400;
+  --font-bold: 700;
+  font-weight: var(--font-bold);
+}

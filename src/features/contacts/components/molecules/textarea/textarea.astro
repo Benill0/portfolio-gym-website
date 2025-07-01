@@ -1,0 +1,17 @@
+---
+const { id, label, placeholder } = Astro.props;
+---
+
+<div class="wrapper">
+  <label for={id}>{label}</label>
+  <textarea
+    name={id}
+    id={id}
+    class="textarea"
+    placeholder={placeholder}
+    required></textarea>
+</div>
+
+<style>
+  @import url("./textarea.css");
+</style>

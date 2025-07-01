@@ -1,0 +1,30 @@
+---
+import { CardTraining } from "../../molecules";
+import { TRAINING_OPTIONS } from "./../../../static/service-training";
+---
+
+<section class="wrapper-services box-animation" data-width="full">
+  <h1 class="title">Servicios de Entrenamiento</h1>
+  <h2 class="subtitle">
+    Ofrecemos diferentes modalidades de entrenamiento adaptadas a tus
+    necesidades
+  </h2>
+  <div class="cards">
+    {
+      TRAINING_OPTIONS.map((option) => (
+        <CardTraining
+          title={option.title}
+          icon={option.icon}
+          description={option.description}
+          features={option.features}
+          priceRange={option.priceRange}
+          unit={option.unit}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @import url("./service-training.css");
+</style>

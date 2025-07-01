@@ -1,0 +1,21 @@
+:root {
+  /* Main colors */
+  --primary-color: #09a2f9;
+  --secondary-color: #ffe400;
+
+  /* Text colors */
+  --primary-text: #ffffff;
+  --secondary-text: #9ca3a2;
+  --tertiary-text: #d1d5db;
+
+  /* Background & surface colors */
+  --background: #000000; /* Fondo general */
+  --surface-color: #111827; /* Fondo de contenedores */
+  --surface-alt-color: #1f2937; /* Variación para secciones/elementos */
+  --surface-muted-color: #374151; /* Otra variación más clara */
+
+  /* Optional: Borders based on surfaces */
+  --border-on-surface: var(--surface-alt-color);
+  --border-on-muted: var(--surface-muted-color);
+  --border-on-primary: #264d8e;
+}

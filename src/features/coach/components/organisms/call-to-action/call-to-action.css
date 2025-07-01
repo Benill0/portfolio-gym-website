@@ -1,0 +1,42 @@
+.call-to-action {
+  background: linear-gradient(to right, #099fef, #0894be);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 20rem;
+  justify-content: center;
+
+  @media (width >= 64rem) {
+    min-height: 25rem;
+  }
+}
+
+.title {
+  font-size: clamp(var(--text-2xl), 6vw, var(--text-5xl));
+  color: var(--primary-text);
+  line-height: 0.5;
+  text-align: center;
+}
+
+.subtitle {
+  width: min(100%, 35rem);
+  font-size: clamp(var(--text-base), 6vw, var(--text-2xl));
+  color: var(--primary-text);
+  font-weight: var(--font-regular);
+  text-align: center;
+}
+
+.button-action {
+  width: min(100%, 15rem);
+  border-radius: var(--rounded-lg);
+  padding: 0.6rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--primary-text);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  color: var(--background);
+  font-weight: var(--font-bold);
+  background-color: var(--secondary-color);
+}

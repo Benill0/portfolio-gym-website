@@ -1,0 +1,27 @@
+---
+interface Props {
+  data: {
+    value: string;
+    label: string;
+  }[];
+}
+
+const { data } = Astro.props;
+---
+
+<section class="stats-display box-animation" data-width="full">
+  <ul class="list-stats">
+    {
+      data.map((item) => (
+        <li class="stats-item">
+          <span>{item.value}</span>
+          <p>{item.label}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  @import url("./stats-display.css");
+</style>

@@ -1,0 +1,13 @@
+---
+import { Star } from "@/core/assets/icons";
+
+const { rating, length = 5 } = Astro.props;
+---
+
+<div>
+  {
+    Array.from({ length }, (_, index) => (
+      <Star size={16} fill={index <= rating - 1 ? "#ffe400" : "none"} />
+    ))
+  }
+</div>

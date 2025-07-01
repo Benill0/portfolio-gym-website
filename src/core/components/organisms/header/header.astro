@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../../../assets/images/logo.webp";
+
+const url = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Inicio", active: url === "/" },
+  {
+    href: "/entrenadores",
+    label: "Entrenadores",
+    active: url === "/entrenadores",
+  },
+  { href: "/productos", label: "Productos", active: url === "/productos" },
+  { href: "/clases", label: "Clases", active: url === "/clases" },
+  { href: "/contactos", label: "Contactos", active: url === "/contactos" },
+];
+---
+
+<header>
+  <div class="wrapper">
+    <a href="/" aria-label="logo">
+      <Image src={Logo} alt="logo" class="logotipo-header" priority />
+    </a>
+    <div class="wrapper-nav">
+      <nav>
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              data-active={link.active}
+              aria-current={link.active ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+      <button class="button"> Únete Ahora </button>
+    </div>
+    <button
+      id="menu-button-hamburger"
+      class="menu-button-hamburger"
+      aria-label="menu-button-hamburger"
+      aria-expanded="false"
+      aria-controls="menu"
+    >
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+  </div>
+</header>
+
+<style>
+  @import url("./header.css");
+</style>
+
+<script>
+  import { $ } from "./../../../lib/dom-selector";
+
+  const button = $(".button")!;
+
+  button.addEventListener("click", () => {
+    const link =
+      "https://wa.me/+51920849772?text=%C2%A1Hola!%20Estoy%20interesado%20en%20unirme%20al%20gimnasio";
+    window.open(link, "_blank");
+  });
+</script>

@@ -1,0 +1,26 @@
+---
+const {
+  id,
+  label,
+  type = "text",
+  placeholder = "",
+  required = true,
+  maxlength = 50,
+} = Astro.props;
+---
+
+<label class="wrapper">
+  {label}
+  <input
+    id={id}
+    type={type}
+    placeholder={placeholder}
+    required={required}
+    class="input"
+    maxlength={maxlength}
+  />
+</label>
+
+<style>
+  @import url("./input.css");
+</style>

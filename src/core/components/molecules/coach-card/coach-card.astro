@@ -1,0 +1,17 @@
+---
+const { name, imageUri } = Astro.props;
+---
+
+<div
+  class="wrapper-card"
+  style={{
+    backgroundImage: `url(${imageUri})`,
+  }}
+>
+  <h2 class="coach-name">{name}</h2>
+  <h3 class="coach-title">Entrenador</h3>
+</div>
+
+<style>
+  @import url("./coach-card.css");
+</style>

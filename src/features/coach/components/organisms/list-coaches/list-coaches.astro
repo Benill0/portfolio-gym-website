@@ -1,0 +1,21 @@
+---
+import { TRAINERS } from "@/core/static/coaches";
+import CardCoach from "../card-coach/card-coach.astro";
+---
+
+<section class="box-animation">
+  <h1 data-text="NUESTRO EQUIPO" class="title">
+    Nuestro Equipo de Entrenadores
+  </h1>
+  <h2 class="subtitle">
+    Cada miembro de nuestro equipo está altamente calificado y comprometido con
+    tu éxito
+  </h2>
+  <ul class="list-coaches">
+    {TRAINERS.map((trainer) => <CardCoach {...trainer} />)}
+  </ul>
+</section>
+
+<style>
+  @import url("./list-coaches.css");
+</style>

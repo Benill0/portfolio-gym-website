@@ -1,0 +1,31 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  options: { value: string; label: string }[];
+  placeholder?: string;
+}
+
+const {
+  id,
+  label,
+  options,
+  placeholder = "Selecciona una opción",
+} = Astro.props;
+---
+
+<div class="wrapper">
+  <label class="label" for={id}>{label}</label>
+  <select name={id} id={id} class="select" required>
+    <option value="" disabled selected hidden>{placeholder}</option>
+    {
+      options.map((option) => (
+        <option value={option.value}>{option.label}</option>
+      ))
+    }
+  </select>
+</div>
+
+<style>
+  @import url("./select.css");
+</style>

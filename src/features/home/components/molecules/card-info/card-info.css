@@ -1,0 +1,29 @@
+.card-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  color: var(--secondary-color);
+  background-color: var(--surface-color);
+  border: solid 1px var(--border-on-surface);
+  border-radius: var(--rounded-lg);
+  padding: 2rem 1rem;
+  align-items: center;
+
+  &:hover {
+    border-color: var(--border-on-primary);
+  }
+}
+
+.title {
+  color: var(--primary-text);
+  font-size: var(--text-2xl);
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  color: var(--tertiary-text);
+  font-size: var(--text-lg);
+  font-weight: var(--font-regular);
+}

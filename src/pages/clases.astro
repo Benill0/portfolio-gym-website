@@ -1,0 +1,23 @@
+---
+import { StatsDisplay } from "@/core/components/organisms";
+import { Separator } from "@/features/classes/components/molecules";
+import {
+  CallToAction,
+  ClassCalendar,
+  CourseList,
+  GroupClassBenefits,
+  HeroClasses,
+} from "@/features/classes/components/organisms";
+import { METRICS_CLASSES } from "@/features/classes/static/metrics-classes";
+import Layout from "../core/components/templates/layout.astro";
+---
+
+<Layout>
+  <HeroClasses />
+  <StatsDisplay data={METRICS_CLASSES} />
+  <GroupClassBenefits />
+  <Separator />
+  <CourseList />
+  <ClassCalendar />
+  <CallToAction />
+</Layout>

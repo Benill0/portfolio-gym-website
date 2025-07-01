@@ -1,0 +1,18 @@
+.list-info {
+  display: grid;
+  gap: 2rem 1rem;
+  padding: 5rem 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (width >= 40rem) {
+  .list-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 64rem) {
+  .list-info {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,27 @@
+---
+import { CardBenefit } from "@/features/classes/components/molecules";
+import { GROUP_BENEFITS } from "@/features/classes/static/benefits";
+---
+
+<section class="wrapper-choose box-animation">
+  <h1 class="title">¿Por Qué Elegir Clases Grupales?</h1>
+  <h2 class="subtitle">
+    Las clases grupales ofrecen beneficios únicos que van más allá del ejercicio
+    individual
+  </h2>
+  <div class="list-benefits">
+    {
+      GROUP_BENEFITS.map((benefit) => (
+        <CardBenefit
+          icon={benefit.icon}
+          title={benefit.title}
+          description={benefit.description}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  @import url("./group-class-benefits.css");
+</style>

@@ -1,0 +1,37 @@
+.wrapper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 33.75rem;
+  background-position: center;
+  background-size: cover;
+  width: min(100%, 24.125rem);
+  padding-bottom: 1rem;
+  gap: 0.5rem;
+  isolation: isolate;
+  position: relative;
+}
+
+.wrapper-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(10, 160, 245, 0.8) 8%,
+    rgb(10, 160, 245, 0.4) 15%,
+    rgb(10, 160, 245, 0) 23%
+  );
+
+  z-index: -1;
+}
+
+.coach-name {
+  text-align: center;
+  font-size: var(--text-3xl);
+}
+
+.coach-title {
+  text-align: center;
+}

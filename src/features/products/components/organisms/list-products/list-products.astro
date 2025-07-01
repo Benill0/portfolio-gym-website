@@ -1,0 +1,14 @@
+---
+import { Product } from "@/features/products/components/organisms";
+import { PRODUCTS } from "@/features/products/static/products";
+---
+
+<section>
+  <ul class="list-products">
+    {PRODUCTS.map((product) => <Product {...product} />)}
+  </ul>
+</section>
+
+<style>
+  @import url("./list-products.css");
+</style>

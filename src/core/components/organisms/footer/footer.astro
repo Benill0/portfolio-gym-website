@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Marker,
+  Phone,
+  X,
+  Youtube,
+} from "../../../assets/icons";
+import LOGO from "./../../../assets/images/logo.webp";
+---
+
+<footer>
+  <div class="container">
+    <div class="about">
+      <Image src={LOGO} alt="logo" class="logo" />
+      <p class="description">
+        Tu gimnasio de confianza para alcanzar tus objetivos de fitness con el
+        mejor equipo y entrenadores profesionales.
+      </p>
+    </div>
+    <div class="links-container">
+      <h2 class="title">Enlaces Rápidos</h2>
+      <nav class="links">
+        <a href="/">Inicio</a>
+        <a href="/entrenadores">Entrenadores</a>
+        <a href="/productos">Productos</a>
+        <a href="/clases">Clases</a>
+      </nav>
+    </div>
+    <div class="links-container">
+      <h2 class="title">Servicios</h2>
+      <ul class="list-services">
+        <li>Entrenamiento Personal</li>
+        <li>Clases Grupales</li>
+        <li>Nutrición Deportiva</li>
+        <li>Rehabilitación</li>
+      </ul>
+    </div>
+    <div class="links-container">
+      <h2 class="title">Contacto</h2>
+      <ul class="list-contact">
+        <li><Phone size={16} /> +34 123 456 789</li>
+        <li><Mail size={16} /> info@morrostraining.com</li>
+        <li><Marker size={16} /> Calle 123, Ciudad, País</li>
+      </ul>
+    </div>
+    <hr class="line" />
+    <div class="footer-info">
+      <p class="copyright">Copyright @ 2025 All Rights Reserved.</p>
+      <nav class="social-media">
+        <a
+          href="https://www.facebook.com/profile.php?id=61571447524849"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+          aria-label="Facebook"
+        >
+          <Facebook size={24} />
+        </a>
+        <a
+          href="https://www.instagram.com/solvedcodepe/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-link"
+          aria-label="Instagram"
+        >
+          <Instagram size={24} />
+        </a>
+        <a
+          href="https://www.youtube.com/@solvedcode"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="X"
+          class="social-link"
+        >
+          <X width={24} height={24} />
+        </a>
+        <a
+          href="https://www.youtube.com/@solvedcode"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Youtube"
+          class="social-link"
+        >
+          <Youtube width={28} height={24} />
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @import url("./footer.css");
+</style>

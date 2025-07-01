@@ -1,0 +1,18 @@
+.card-faq {
+  display: grid;
+  width: min(100%, 46rem);
+  background-color: var(--surface-color);
+  border-radius: var(--rounded-lg);
+  gap: 1rem;
+  padding: 2rem 2rem;
+
+  & > h2 {
+    font-size: clamp(var(--text-xl), 6vw, var(--text-3xl));
+  }
+
+  & > p {
+    font-size: clamp(var(--text-sm), 6vw, var(--text-xl));
+    font-weight: var(--font-regular);
+    width: 95%;
+  }
+}

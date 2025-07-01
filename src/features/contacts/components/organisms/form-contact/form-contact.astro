@@ -1,0 +1,56 @@
+---
+import { Send } from "@/core/assets/icons";
+import { Input, Select, Textarea } from "../../molecules";
+
+const options = [
+  {
+    value: "Membresías",
+    label: "Membresías",
+  },
+  {
+    value: "Entrenamiento",
+    label: "Entrenamiento",
+  },
+  {
+    value: "Clases",
+    label: "Clases",
+  },
+  {
+    value: "Otros",
+    label: "Otros",
+  },
+];
+---
+
+<section data-width="full" class="box-animation">
+  <div class="wrapper">
+    <h1 class="title">Envíanos un Mensaje</h1>
+    <p class="subtitle">
+      Completa el formulario y nos pondremos en contacto contigo lo antes
+      posible.
+    </p>
+    <form class="form" id="form-contact">
+      <Input id="form-name" label="Nombre Completo" placeholder="Tu nombre" />
+      <Input id="form-email" label="Email" placeholder="example@example.com" />
+      <Input id="form-phone" label="Teléfono" placeholder="+54 11 2345 6789" />
+      <Select
+        id="form-subject"
+        label="Asunto"
+        options={options}
+        placeholder="Seleccione un asunto"
+      />
+      <Textarea
+        id="form-message"
+        label="Mensaje"
+        placeholder="Cuéntanos como podemos ayudarte..."
+      />
+      <button type="submit" class="button">
+        <Send size={18} /> Enviar Mensaje</button
+      >
+    </form>
+  </div>
+</section>
+
+<style>
+  @import url("./form-contact.css");
+</style>

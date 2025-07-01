@@ -1,0 +1,10 @@
+section {
+  padding: 3rem 1rem;
+}
+
+.list-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem 1rem;
+  justify-items: center;
+}

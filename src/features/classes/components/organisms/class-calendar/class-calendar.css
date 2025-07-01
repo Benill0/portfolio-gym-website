@@ -1,0 +1,93 @@
+section {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  padding: 3rem 1rem;
+  align-items: center;
+  background-color: var(--surface-color);
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(var(--text-2xl), 6vw, var(--text-5xl));
+}
+
+.subtitle {
+  text-align: center;
+  font-size: clamp(var(--text-lg), 6vw, var(--text-2xl));
+  color: var(--tertiary-text);
+  font-weight: var(--font-regular);
+  padding: 0 1rem 2rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  width: min(90dvw, 75rem);
+  padding-top: 2rem;
+  margin: auto;
+}
+
+table {
+  overflow-x: auto;
+  min-width: 40.625rem;
+  width: 100%;
+  background-color: var(--background);
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: var(--rounded-lg);
+}
+
+th {
+  letter-spacing: 0.5px;
+  font-weight: var(--font-bold);
+  font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.hour {
+  opacity: 0.6;
+}
+
+td {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+span {
+  padding: 0.2rem 0.6rem;
+  font-size: clamp(var(--text-sm), 3vw, var(--text-lg));
+  border-radius: var(--rounded-full);
+}
+
+span[data-category="Cardio"] {
+  background-color: #ef4444;
+}
+
+span[data-category="Fuerza"] {
+  background-color: #3b82f6;
+}
+
+span[data-category="Flexibilidad"] {
+  background-color: #facc15;
+}
+
+span[data-category="Yoga"] {
+  background-color: #a855f7;
+}
+
+.hour-row {
+  border-bottom: solid 1px var(--surface-color);
+  border-top: solid 1px var(--border);
+}
+
+.button-action {
+  background-color: var(--primary-color);
+  margin-top: 2rem;
+  border: none;
+  border-radius: var(--rounded-lg);
+  color: var(--primary-text);
+  font-size: var(--text-lg);
+  padding: 0.6rem 2rem;
+  font-weight: var(--font-bold);
+}

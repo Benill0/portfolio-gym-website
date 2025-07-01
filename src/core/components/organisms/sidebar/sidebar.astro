@@ -1,0 +1,51 @@
+---
+import Image from "astro/components/Image.astro";
+import LOGO from "./../../../assets/images/logo.webp";
+
+const url = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "HOME", active: url === "/" },
+  {
+    href: "/entrenadores",
+    label: "ENTRENADOR",
+    active: url === "/entrenadores",
+  },
+  { href: "/productos", label: "PRODUCTOS", active: url === "/productos" },
+  { href: "/clases", label: "CLASES", active: url === "/clases" },
+  { href: "/contactos", label: "CONTACTOS", active: url === "/contactos" },
+];
+---
+
+<div data-open="false" class="background-aside">
+  <aside data-open="false" class="aside" role="navigation">
+    <Image src={LOGO} alt="logo" class="logo" width={280} />
+    <hr />
+    <nav aria-label="main-navigation">
+      <ul class="nav-links-aside">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                data-active={link.active}
+                aria-current={link.active ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <hr />
+    <div class="wrapper-copyright">
+      <h3></h3>
+      <p></p>
+    </div>
+  </aside>
+</div>
+
+<style>
+  @import url("./sidebar.css");
+</style>

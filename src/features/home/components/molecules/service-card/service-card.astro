@@ -1,0 +1,18 @@
+---
+import { ArrowRight } from "@/core/assets/icons";
+
+const { icon: Icon, title, description, url } = Astro.props;
+---
+
+<a href={url} class="service-card">
+  <Icon size={48} />
+  <h3 class="title">{title}</h3>
+  <p class="description">{description}</p>
+  <div class="wrapper-arrow">
+    <ArrowRight size={18} />
+  </div>
+</a>
+
+<style>
+  @import url("./service-card.css");
+</style>

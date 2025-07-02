@@ -5,15 +5,16 @@ import LOGO from "./../../../assets/images/logo.webp";
 const url = Astro.url.pathname;
 
 const links = [
-  { href: "/", label: "HOME", active: url === "/" },
+  { href: "/", label: "Inicio", active: url === "/" },
   {
     href: "/entrenadores",
-    label: "ENTRENADOR",
+    label: "Entrenador",
     active: url === "/entrenadores",
   },
-  { href: "/productos", label: "PRODUCTOS", active: url === "/productos" },
-  { href: "/clases", label: "CLASES", active: url === "/clases" },
-  { href: "/contactos", label: "CONTACTOS", active: url === "/contactos" },
+  { href: "/productos", label: "Productos", active: url === "/productos" },
+  { href: "/membresias", label: "Membresías", active: url === "/membresias" },
+  { href: "/clases", label: "Clases", active: url === "/clases" },
+  { href: "/contactos", label: "Contactos", active: url === "/contactos" },
 ];
 ---
 

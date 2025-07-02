@@ -53,7 +53,7 @@ a[data-active="true"] {
   border: 0;
   border-radius: var(--rounded-md);
   color: var(--border-on-primary);
-  padding: 0.5rem 2.5rem;
+  padding: 0.5rem 2rem;
   font-weight: var(--font-bold);
   font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
   cursor: pointer;

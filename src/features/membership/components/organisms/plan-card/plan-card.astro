@@ -15,6 +15,11 @@ const {
   characteristics,
   isPopular,
 } = Astro.props as MembershipPlan;
+
+const message = `Hola, deseo obtener el plan ${name}`;
+const encodedMessage = encodeURIComponent(message);
+
+const whatsappLink = `https://wa.me/51920849772?text=${encodedMessage}`;
 ---
 
 <li class="plan-card" data-isPopular={isPopular}>
@@ -50,7 +55,7 @@ const {
       ))
     }
   </ul>
-  <a href="" class="cta-button" data-isPopular={isPopular}>{cta}</a>
+  <a href={whatsappLink} class="cta-button" data-isPopular={isPopular}>{cta}</a>
 </li>
 
 <style>

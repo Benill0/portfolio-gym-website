@@ -1,0 +1,15 @@
+---
+const { title, description, icon: Icon } = Astro.props;
+---
+
+<li class="wrapper-card">
+  <div class="wrapper-icon">
+    <Icon size={32} />
+  </div>
+  <h3 class="title">{title}</h3>
+  <p class="description">{description}</p>
+</li>
+
+<style>
+  @import url("./card-benefit.css");
+</style>

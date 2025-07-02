@@ -1,0 +1,44 @@
+.benefits-membership {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  background-color: var(--surface-color);
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(var(--text-2xl), 6vw, var(--text-5xl));
+  line-height: 0.5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: clamp(var(--text-lg), 6vw, var(--text-2xl));
+  color: var(--tertiary-text);
+  font-weight: var(--font-regular);
+  padding: 0 1rem 2rem 3rem;
+}
+
+.list-benefits {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  width: min(100%, var(--max-width));
+  justify-self: center;
+}
+
+@media (width >= 48rem) {
+  .list-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 64rem) {
+  .list-benefits {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

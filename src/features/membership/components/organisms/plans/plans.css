@@ -1,0 +1,36 @@
+.plans {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(var(--text-2xl), 6vw, var(--text-5xl));
+  line-height: 0.5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: clamp(var(--text-lg), 6vw, var(--text-2xl));
+  color: var(--tertiary-text);
+  font-weight: var(--font-regular);
+  padding: 0 1rem 2rem 3rem;
+}
+
+.list-plans {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  width: min(100%, var(--max-width));
+}
+
+@media (width >= 48rem) {
+  .list-plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

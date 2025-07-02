@@ -1,0 +1,58 @@
+---
+import { Check, Close } from "@/core/assets/icons";
+import type { MembershipPlan } from "@/features/membership/static/plans";
+
+const {
+  icon: Icon,
+  description,
+  name,
+  price,
+  billingCycle,
+  oldPrice,
+  features,
+  excludedFeatures,
+  cta,
+  characteristics,
+  isPopular,
+} = Astro.props as MembershipPlan;
+---
+
+<li class="plan-card" data-isPopular={isPopular}>
+  <Icon size={48} />
+  <h2 data-text={name} class="name">{name}</h2>
+  <p class="description">{description}</p>
+  <div class="wrapper-price">
+    <span class="price">{price}</span>
+    <div class="wrapper-billing-cycle">
+      {oldPrice && <span class="old-price">{oldPrice}</span>}
+      <span class="billing-cycle">{billingCycle}</span>
+    </div>
+  </div>
+  <ul class="list-characteristics">
+    {characteristics.map((characteristic) => <li>{characteristic}</li>)}
+  </ul>
+  <ul class="list-features">
+    {
+      features.map((feature) => (
+        <li class="included">
+          <span class="icon-check">
+            <Check size={18} />
+          </span>
+          {feature}
+        </li>
+      ))
+    }
+    {
+      excludedFeatures?.map((feature) => (
+        <li class="excluded">
+          <Close size={18} /> {feature}
+        </li>
+      ))
+    }
+  </ul>
+  <a href="" class="cta-button" data-isPopular={isPopular}>{cta}</a>
+</li>
+
+<style>
+  @import url("./plan-card.css");
+</style>

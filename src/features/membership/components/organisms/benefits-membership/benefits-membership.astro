@@ -1,0 +1,23 @@
+---
+import { CardBenefit } from "@/features/membership/components/molecules";
+import { BENEFITS_MEMBERSHIP } from "@/features/membership/static/benefits";
+---
+
+<section class="benefits-membership" data-width="full">
+  <h1 data-text="Beneficios de Ser Miembro" class="title">
+    Beneficios de Ser Miembro
+  </h1>
+  <h2
+    data-text="Más que un gimnasio, una comunidad comprometida con tu bienestar"
+    class="subtitle"
+  >
+    Más que un gimnasio, una comunidad comprometida con tu bienestar
+  </h2>
+  <ul class="list-benefits">
+    {BENEFITS_MEMBERSHIP.map((plan) => <CardBenefit {...plan} />)}
+  </ul>
+</section>
+
+<style>
+  @import url("./benefits-membership.css");
+</style>

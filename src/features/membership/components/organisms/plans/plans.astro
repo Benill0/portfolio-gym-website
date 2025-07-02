@@ -1,0 +1,21 @@
+---
+import { MEMBERSHIP_PLANS } from "@/features/membership/static/plans";
+import PlanCard from "../plan-card/plan-card.astro";
+---
+
+<section class="plans">
+  <h1 data-text="PLANES DE MEMBRESÍA" class="title">Planes de Membresía</h1>
+  <h2
+    data-text="Elige el plan que mejor se adapte a tus necesidades y objetivos fitness"
+    class="subtitle"
+  >
+    Elige el plan que mejor se adapte a tus necesidades y objetivos fitness
+  </h2>
+  <ul class="list-plans">
+    {MEMBERSHIP_PLANS.map((plan) => <PlanCard {...plan} />)}
+  </ul>
+</section>
+
+<style>
+  @import url("./plans.css");
+</style>

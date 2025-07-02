@@ -1,0 +1,19 @@
+---
+import { StatsDisplay } from "@/core/components/organisms";
+import Layout from "@/core/components/templates/layout.astro";
+import {
+  BenefitsMembership,
+  CallToAction,
+  HeroMembership,
+  Plans,
+} from "../features/membership/components/organisms";
+import { METRICS_MEMBERSHIP } from "../features/membership/static/metrics";
+---
+
+<Layout>
+  <HeroMembership />
+  <StatsDisplay data={METRICS_MEMBERSHIP} />
+  <Plans />
+  <BenefitsMembership />
+  <CallToAction />
+</Layout>

@@ -1,0 +1,30 @@
+---
+import { BUYING_GUIDE } from "@/features/products/static/guide";
+import { GuideCard } from "../../molecules";
+
+const link =
+  "https://wa.me/+51920849772?text=%C2%A1Hola!%20Estoy%20interesado%20en%20unirme%20al%20gimnasio";
+---
+
+<section class="wrapper-content box-animation">
+  <h2 class="title">Guía de Compra</h2>
+  <p class="subtitle">
+    ¿No sabes qué producto elegir? Te ayudamos a encontrar lo que necesitas
+  </p>
+  <div class="list-guide">
+    {BUYING_GUIDE.map((guide) => <GuideCard {...guide} />)}
+  </div>
+  <a
+    href={link}
+    class="button-action"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Obtener Prueba Gratis"
+  >
+    Consulta Personalizada Gratis
+  </a>
+</section>
+
+<style>
+  @import url("./buying-guide.css");
+</style>

@@ -1,0 +1,28 @@
+---
+import type { BuyingGuideSection } from "./../../../static/guide";
+const { icon: Icon, title, items } = Astro.props as BuyingGuideSection;
+---
+
+<article class="wrapper-card">
+  <div class="wrapper-icon">
+    <Icon size={32} />
+  </div>
+  <h3 class="title">{title}</h3>
+  <ul class="list-supplements">
+    {
+      items.map((item) => (
+        <li class="supplement">
+          <span>{item.name}</span>
+          <span>
+            {item.supplements.join(" + ")}
+            {item.timing}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</article>
+
+<style>
+  @import url("./guide-card.css");
+</style>

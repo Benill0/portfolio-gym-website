@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import BOWFLEX_LOGO from "./../../../assets/logos/bowflex-logo.webp";
+import CYBEX_LOGO from "./../../../assets/logos/cybex-logo.webp";
+import HARBINGER_LOGO from "./../../../assets/logos/harbinger-logo.webp";
+import HOIST_FITNESS_LOGO from "./../../../assets/logos/hoist-fitness-logo.webp";
+import PELOTON_LOGO from "./../../../assets/logos/peloton-logo.webp";
+import SKLZ_LOGO from "./../../../assets/logos/sklz-logo.webp";
+---
+
+<section class="wrapper-section box-animation" data-width="full">
+  <h2 class="title">Marcas de Confianza</h2>
+  <p class="subtitle">
+    Trabajamos con las mejores marcas del mercado para garantizar calidad
+    premium
+  </p>
+  <ul class="list-logos">
+    <li>
+      <Image
+        src={CYBEX_LOGO}
+        alt="cybex logo "
+        width={200}
+        class="filter-white logo"
+      />
+    </li>
+    <li>
+      <Image
+        src={HARBINGER_LOGO}
+        alt="hammer strength logo"
+        width={200}
+        class="logo"
+      />
+    </li>
+    <li>
+      <Image
+        src={HOIST_FITNESS_LOGO}
+        alt="hoist fitness logo"
+        class="filter-white logo"
+        width={200}
+      />
+    </li>
+    <li>
+      <Image
+        src={PELOTON_LOGO}
+        alt="peloton logo"
+        width={200}
+        class="filter-white logo"
+      />
+    </li>
+    <li>
+      <Image
+        src={BOWFLEX_LOGO}
+        alt="bowflex logo"
+        width={200}
+        class="filter-white logo"
+      />
+    </li>
+    <li>
+      <Image
+        src={SKLZ_LOGO}
+        alt="sklz logo"
+        width={200}
+        class="filter-white logo"
+      />
+    </li>
+  </ul>
+</section>
+
+<style>
+  @import url("./trusted-brands.css");
+</style>

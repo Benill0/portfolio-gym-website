@@ -4,15 +4,15 @@ import { BENEFITS_MEMBERSHIP } from "@/features/membership/static/benefits";
 ---
 
 <section class="benefits-membership box-animation" data-width="full">
-  <h1 data-text="Beneficios de Ser Miembro" class="title">
+  <h2 data-text="Beneficios de Ser Miembro" class="title">
     Beneficios de Ser Miembro
-  </h1>
-  <h2
+  </h2>
+  <p
     data-text="Más que un gimnasio, una comunidad comprometida con tu bienestar"
     class="subtitle"
   >
     Más que un gimnasio, una comunidad comprometida con tu bienestar
-  </h2>
+  </p>
   <ul class="list-benefits">
     {BENEFITS_MEMBERSHIP.map((plan) => <CardBenefit {...plan} />)}
   </ul>

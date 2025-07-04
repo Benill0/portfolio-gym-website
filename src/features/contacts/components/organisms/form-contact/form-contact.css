@@ -6,6 +6,7 @@ section {
 .wrapper {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   width: min(100%, var(--max-width));
   margin: 0 auto;
 }
@@ -24,7 +25,7 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .button {

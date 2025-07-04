@@ -4,13 +4,13 @@ import PlanCard from "../plan-card/plan-card.astro";
 ---
 
 <section class="plans">
-  <h1 data-text="PLANES DE MEMBRESÍA" class="title">Planes de Membresía</h1>
-  <h2
+  <h2 data-text="PLANES DE MEMBRESÍA" class="title">Planes de Membresía</h2>
+  <p
     data-text="Elige el plan que mejor se adapte a tus necesidades y objetivos fitness"
     class="subtitle"
   >
     Elige el plan que mejor se adapte a tus necesidades y objetivos fitness
-  </h2>
+  </p>
   <ul class="list-plans">
     {MEMBERSHIP_PLANS.map((plan) => <PlanCard {...plan} />)}
   </ul>

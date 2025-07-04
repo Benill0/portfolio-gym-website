@@ -5,6 +5,7 @@ section {
   padding: 3rem 1rem;
   align-items: center;
   background-color: var(--surface-color);
+  gap: 1rem;
 }
 
 .title {
@@ -23,7 +24,7 @@ section {
 .table-wrapper {
   overflow-x: auto;
   width: min(90dvw, 75rem);
-  padding-top: 2rem;
+  padding-top: 1rem;
   margin: auto;
 }
 

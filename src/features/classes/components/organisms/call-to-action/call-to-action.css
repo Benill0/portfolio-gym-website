@@ -6,6 +6,7 @@
   padding: 2rem 1rem;
   min-height: 20rem;
   justify-content: center;
+  gap: 2rem;
 
   @media (width >= 64rem) {
     min-height: 25rem;
@@ -15,7 +16,6 @@
 .title {
   font-size: clamp(var(--text-2xl), 6vw, var(--text-5xl));
   color: var(--primary-text);
-  line-height: 0.5;
   text-align: center;
 }
 
@@ -31,7 +31,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding-top: 1.5rem;
 }
 
 .button-action {

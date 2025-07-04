@@ -4,13 +4,13 @@ import CardCoach from "../card-coach/card-coach.astro";
 ---
 
 <section class="box-animation">
-  <h1 data-text="NUESTRO EQUIPO" class="title">
+  <h2 data-text="NUESTRO EQUIPO" class="title">
     Nuestro Equipo de Entrenadores
-  </h1>
-  <h2 class="subtitle">
+  </h2>
+  <p class="subtitle">
     Cada miembro de nuestro equipo está altamente calificado y comprometido con
     tu éxito
-  </h2>
+  </p>
   <ul class="list-coaches">
     {TRAINERS.map((trainer) => <CardCoach {...trainer} />)}
   </ul>

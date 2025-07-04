@@ -9,7 +9,6 @@
 .title {
   text-align: center;
   font-size: clamp(var(--text-2xl), 6vw, var(--text-5xl));
-  line-height: 0.5px;
 }
 
 .subtitle {

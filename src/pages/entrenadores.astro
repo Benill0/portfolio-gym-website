@@ -8,9 +8,15 @@ import {
   ListCoaches,
   ServiceTraining,
 } from "../features/coach/components/organisms";
+
+const title = "Entrenadores | Morros Training";
+const description =
+  "Descubre nuestras clases de entrenamiento grupales, calendario, beneficios y más en Morros Training. Únete a nuestras clases hoy mismo.";
+const keywords =
+  "entrenadores, entrenamiento, fitness, grupo, calendario, beneficios";
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroCoach />
   <StatsDisplay data={METRICS_COACH} />
   <ServiceTraining />

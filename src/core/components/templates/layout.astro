@@ -5,7 +5,11 @@ import agencyFBRegular from "./../../assets/fonts/AgencyFB-Reg.woff2";
 
 import { Aside, Footer, Header } from "./../organisms";
 
-
+const {
+  title = "Morros Training",
+  description = "Gimnasio de Entrenamiento",
+  keywords = "entrenamiento, gimnasio, fitness",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +17,9 @@ import { Aside, Footer, Header } from "./../organisms";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <link
       rel="preload"
@@ -29,9 +35,9 @@ import { Aside, Footer, Header } from "./../organisms";
       type="font/woff2"
       crossorigin="anonymous"
     />
-    <title>Morros Training</title>
+    <title>{title}</title>
   </head>
-  <ClientRouter />  
+  <ClientRouter />
   <body>
     <Header />
     <Aside />
@@ -40,134 +46,135 @@ import { Aside, Footer, Header } from "./../organisms";
     </main>
     <Footer />
   </body>
-</html>
 
-<style is:global>
-  @import url("../../css/normalize.css");
-  @import url("../../css/custom/colors.css");
-  @import url("../../css/custom/font.css");
-  @import url("../../css/custom/font-weights.css");
-  @import url("../../css/custom/font-sizes.css");
-  @import url("../../css/custom/border.css");
 
-  :root {
-    --max-width: 90rem;
-  }
+  <style is:global>
+    @import url("../../css/normalize.css");
+    @import url("../../css/custom/colors.css");
+    @import url("../../css/custom/font.css");
+    @import url("../../css/custom/font-weights.css");
+    @import url("../../css/custom/font-sizes.css");
+    @import url("../../css/custom/border.css");
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+    :root {
+      --max-width: 90rem;
+    }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    min-height: 100dvh;
-    font-family: "Agency FB", sans-serif;
-    display: grid;
-    grid-template-rows: 7rem 1fr auto;
-    scrollbar-gutter: stable;
-    color: var(--primary-text);
-    background-color: var(--background);
-  }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
 
-  main {
-    min-height: calc(100dvh - 7rem);
-  }
+    body {
+      min-height: 100dvh;
+      font-family: "Agency FB", sans-serif;
+      display: grid;
+      grid-template-rows: 7rem 1fr auto;
+      scrollbar-gutter: stable;
+      color: var(--primary-text);
+      background-color: var(--background);
+    }
 
-  section {
-    justify-self: center;
-    width: min(100%, var(--max-width));
-  }
+    main {
+      min-height: calc(100dvh - 7rem);
+    }
 
-  .box-animation {
-    opacity: 0;
-  }
+    section {
+      justify-self: center;
+      width: min(100%, var(--max-width));
+    }
 
-  .visible {
-    animation: slide-up ease-in-out 0.7s both;
-  }
-
-  @keyframes slide-up {
-    0% {
-      transform: translateY(2rem);
+    .box-animation {
       opacity: 0;
     }
 
-    100% {
-      opacity: 1;
+    .visible {
+      animation: slide-up ease-in-out 0.7s both;
     }
-  }
 
-  @view-transition {
-    navigation: auto;
-  }
+    @keyframes slide-up {
+      0% {
+        transform: translateY(2rem);
+        opacity: 0;
+      }
 
-  section[data-width="full"] {
-    width: 100%;
-  }
-</style>
+      100% {
+        opacity: 1;
+      }
+    }
 
-<script>
-  import { $, $$ } from "./../../lib/dom-selector";
-  
-  document.addEventListener("astro:page-load", () => {
-    console.log('ejecuta evento')
-  let menuOpen = false;
-  const hamburgerMenuButton = $("#menu-button-hamburger")!;
-  const backgroundAside = $(".background-aside")!;
-  const menuAside = $(".aside")!;
-  const linksAside = $$(".links-aside");
-  const logoHeader = $(".logotipo-header")!;
+    @view-transition {
+      navigation: auto;
+    }
 
-  function openMenu() {
-    hamburgerMenuButton.classList.add("menu-button-active");
-    hamburgerMenuButton.setAttribute("aria-expanded", "true");
-    menuAside.setAttribute("data-open", "true");
-    backgroundAside.setAttribute("data-open", "true");
-    logoHeader.setAttribute("data-isMobile", "true");
-    document.body.style.overflow = "hidden";
-    menuOpen = true;
-  }
+    section[data-width="full"] {
+      width: 100%;
+    }
+  </style>
 
-  linksAside.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
-  });
+  <script>
+    import { $, $$ } from "./../../lib/dom-selector";
 
-  function closeMenu() {
-    hamburgerMenuButton.classList.remove("menu-button-active");
-    hamburgerMenuButton.setAttribute("aria-expanded", "false");
-    menuAside.setAttribute("data-open", "false");
-    backgroundAside.setAttribute("data-open", "false");
-    logoHeader.removeAttribute("data-isMobile");
-    document.body.style.overflow = "auto";
-    menuOpen = false;
-  }
+    document.addEventListener("astro:page-load", () => {
+      console.log("ejecuta evento");
+      let menuOpen = false;
+      const hamburgerMenuButton = $("#menu-button-hamburger")!;
+      const backgroundAside = $(".background-aside")!;
+      const menuAside = $(".aside")!;
+      const linksAside = $$(".links-aside");
+      const logoHeader = $(".logotipo-header")!;
 
-  hamburgerMenuButton.addEventListener("click", () => {
-    if (!menuOpen) openMenu();
-    else closeMenu();
-  });
+      function openMenu() {
+        hamburgerMenuButton.classList.add("menu-button-active");
+        hamburgerMenuButton.setAttribute("aria-expanded", "true");
+        menuAside.setAttribute("data-open", "true");
+        backgroundAside.setAttribute("data-open", "true");
+        logoHeader.setAttribute("data-isMobile", "true");
+        document.body.style.overflow = "hidden";
+        menuOpen = true;
+      }
 
-  const animatedBoxes = $$(".box-animation");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+      linksAside.forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
       });
-    },
-    { threshold: 0.2 }
-  );
 
-  animatedBoxes.forEach((el) => observer.observe(el));
-  })
-</script>
+      function closeMenu() {
+        hamburgerMenuButton.classList.remove("menu-button-active");
+        hamburgerMenuButton.setAttribute("aria-expanded", "false");
+        menuAside.setAttribute("data-open", "false");
+        backgroundAside.setAttribute("data-open", "false");
+        logoHeader.removeAttribute("data-isMobile");
+        document.body.style.overflow = "auto";
+        menuOpen = false;
+      }
+
+      hamburgerMenuButton.addEventListener("click", () => {
+        if (!menuOpen) openMenu();
+        else closeMenu();
+      });
+
+      const animatedBoxes = $$(".box-animation");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      animatedBoxes.forEach((el) => observer.observe(el));
+    });
+  </script>
+</html>

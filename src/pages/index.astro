@@ -10,9 +10,14 @@ import {
   Testimonials,
   WhyChooseGym,
 } from "../features/home/components/organisms";
+
+const title = "Morros Training";
+const description =
+  "Descubre nuestras clases de entrenamiento grupales, calendario, beneficios y más en Morros Training. Únete a nuestras clases hoy mismo.";
+const keywords = "entrenamiento, fitness, grupo, calendario, beneficios";
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroHome />
   <StatsDisplay data={METRICS_HOME} />
   <WhyChooseGym />

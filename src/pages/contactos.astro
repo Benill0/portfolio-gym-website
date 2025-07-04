@@ -7,9 +7,15 @@ import {
   ListInfo,
 } from "@/features/contacts/components/organisms";
 import Layout from "../core/components/templates/layout.astro";
+
+const title = "Contactos | Morros Training";
+const description =
+  "Descubre nuestras clases de entrenamiento grupales, calendario, beneficios y más en Morros Training. Únete a nuestras clases hoy mismo.";
+const keywords =
+  "contactos, entrenamiento, fitness, grupo, calendario, beneficios";
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroContact />
   <ListInfo />
   <FormContact />

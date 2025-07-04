@@ -10,9 +10,15 @@ import {
 } from "@/features/classes/components/organisms";
 import { METRICS_CLASSES } from "@/features/classes/static/metrics-classes";
 import Layout from "../core/components/templates/layout.astro";
+
+const title = "Clases | Morros Training";
+const description =
+  "Descubre nuestras clases de entrenamiento grupales, calendario, beneficios y más en Morros Training. Únete a nuestras clases hoy mismo.";
+const keywords =
+  "clases, entrenamiento, fitness, grupo, calendario, beneficios";
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroClasses />
   <StatsDisplay data={METRICS_CLASSES} />
   <GroupClassBenefits />

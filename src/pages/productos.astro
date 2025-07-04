@@ -8,9 +8,15 @@ import {
   TrustedBrands,
 } from "@/features/products/components/organisms";
 import Layout from "../core/components/templates/layout.astro";
+
+const title = "Productos | Morros Training";
+const description =
+  "Descubre nuestras clases de entrenamiento grupales, calendario, beneficios y más en Morros Training. Únete a nuestras clases hoy mismo.";
+const keywords =
+  "productos, entrenamiento, fitness, grupo, calendario, beneficios";
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroProducts />
   <Separator />
   <ListProducts />

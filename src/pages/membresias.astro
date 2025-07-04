@@ -8,9 +8,15 @@ import {
   Plans,
 } from "../features/membership/components/organisms";
 import { METRICS_MEMBERSHIP } from "../features/membership/static/metrics";
+
+const title = "Membresías | Morros Training";
+const description =
+  "Descubre nuestras clases de entrenamiento grupales, calendario, beneficios y más en Morros Training. Únete a nuestras clases hoy mismo.";
+const keywords =
+  "membresías, entrenamiento, fitness, grupo, calendario, beneficios";
 ---
 
-<Layout>
+<Layout title={title} description={description} keywords={keywords}>
   <HeroMembership />
   <StatsDisplay data={METRICS_MEMBERSHIP} />
   <Plans />

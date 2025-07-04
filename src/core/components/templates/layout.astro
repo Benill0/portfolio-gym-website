@@ -1,8 +1,11 @@
 ---
+import { ClientRouter, fade } from "astro:transitions";
 import agencyFBBold from "./../../assets/fonts/AgencyFB-Bold.woff2";
 import agencyFBRegular from "./../../assets/fonts/AgencyFB-Reg.woff2";
 
 import { Aside, Footer, Header } from "./../organisms";
+
+
 ---
 
 <!doctype html>
@@ -28,10 +31,11 @@ import { Aside, Footer, Header } from "./../organisms";
     />
     <title>Morros Training</title>
   </head>
+  <ClientRouter />  
   <body>
     <Header />
     <Aside />
-    <main>
+    <main transition:animate={fade({ duration: "0.5s" })}>
       <slot />
     </main>
     <Footer />
@@ -99,6 +103,10 @@ import { Aside, Footer, Header } from "./../organisms";
     }
   }
 
+  @view-transition {
+    navigation: auto;
+  }
+
   section[data-width="full"] {
     width: 100%;
   }
@@ -106,8 +114,10 @@ import { Aside, Footer, Header } from "./../organisms";
 
 <script>
   import { $, $$ } from "./../../lib/dom-selector";
+  
+  document.addEventListener("astro:page-load", () => {
+    console.log('ejecuta evento')
   let menuOpen = false;
-
   const hamburgerMenuButton = $("#menu-button-hamburger")!;
   const backgroundAside = $(".background-aside")!;
   const menuAside = $(".aside")!;
@@ -159,4 +169,5 @@ import { Aside, Footer, Header } from "./../organisms";
   );
 
   animatedBoxes.forEach((el) => observer.observe(el));
+  })
 </script>

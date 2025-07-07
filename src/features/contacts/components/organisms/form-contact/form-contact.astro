@@ -1,6 +1,7 @@
 ---
 import { Send } from "@/core/assets/icons";
 import { Input, Select, Textarea } from "../../molecules";
+import { Toast } from "@/core/components/molecules";
 
 const options = [
   {
@@ -41,7 +42,6 @@ const options = [
         id="form-phone"
         label="Teléfono"
         placeholder="+54 11 2345 6789"
-        type="tel"
         regex="^\\+?\\d{7,15}$"
         title="Ingrese un número válido de teléfono (7 a 15 dígitos, puede iniciar con +)"
       />
@@ -69,21 +69,68 @@ const options = [
 
 <script>
   /** IMPLEMENTAR ENVÍO DE CORREO */
+  import { Toast } from "@/core/hooks/toast";
   import { $ } from "@/core/lib/dom-selector";
 
   const form = $("#form-contact")! as HTMLFormElement;
-  const name = $("#form-name")!;
+  const name = $("#form-name")! as HTMLInputElement;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const formData = new FormData(form);
-    const data = {
+
+    // Paso 1: Obtén los datos originales
+    const rawData = {
       name: formData.get("form-name"),
       email: formData.get("form-email"),
       phone: formData.get("form-phone"),
       subject: formData.get("form-subject"),
       message: formData.get("form-message"),
     };
+
+    // Paso 2: Crea versión limpia (todos los campos son string)
+    const data = {
+      name: rawData.name?.toString().trim() || "",
+      email: rawData.email?.toString().trim() || "",
+      phone: rawData.phone?.toString().trim() || "",
+      subject: rawData.subject?.toString().trim() || "",
+      message: rawData.message?.toString().trim() || "",
+    };
+
+    // Paso 3: Validaciones
+    const errors: string[] = [];
+
+    if (!data.name) errors.push("- El nombre es obligatorio.");
+    if (!data.email) errors.push("- El correo es obligatorio.");
+    if (!data.phone) errors.push("- El teléfono es obligatorio.");
+    if (!data.subject) errors.push("- El asunto es obligatorio.");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (data.email && !emailRegex.test(data.email)) {
+      errors.push("- El correo no tiene un formato válido.");
+    }
+
+    const phoneRegex = /^9\d{8}$/;
+    if (data.phone && !phoneRegex.test(data.phone)) {
+      errors.push(
+        "- El número de celular debe tener 9 dígitos y comenzar con 9."
+      );
+    }
+
+    if (errors.length > 0) {
+      Toast.show({
+        title: "Error en el formulario",
+        description: errors.join("\n"),
+        type: "error",
+      });
+      return;
+    }
+
+    Toast.show({
+      title: "Mensaje Enviado",
+      description: "Pronto nos pondremos en contacto",
+    });
 
     clearForm();
   });

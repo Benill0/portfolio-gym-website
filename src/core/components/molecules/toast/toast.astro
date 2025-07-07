@@ -1,0 +1,35 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  type?: "success" | "error";
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+  duration?: number;
+}
+
+const {
+  title,
+  description,
+  type = "success",
+  duration = 5000,
+  position = "bottom-right",
+} = Astro.props;
+---
+
+<aside
+  id="toast"
+  class="wrapper-toast"
+  data-type={type}
+  role="alert"
+  aria-live="assertive"
+  data-position={position}
+>
+  <h3 class="title" id="toast-title" data-type={type}>{title}</h3>
+  <p class="description" id="toast-description" data-type={type}>
+    {description}
+  </p>
+</aside>
+
+<style>
+  @import url("./toast.css");
+</style>

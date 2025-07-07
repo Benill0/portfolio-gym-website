@@ -4,6 +4,7 @@ import agencyFBBold from "./../../assets/fonts/AgencyFB-Bold.woff2";
 import agencyFBRegular from "./../../assets/fonts/AgencyFB-Reg.woff2";
 
 import { Aside, Footer, Header } from "./../organisms";
+import { Toast } from "../molecules";
 
 const {
   title = "Morros Training",
@@ -44,6 +45,7 @@ const {
     <main transition:animate={fade({ duration: "0.5s" })}>
       <slot />
     </main>
+    <Toast />
     <Footer />
   </body>
 

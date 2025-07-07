@@ -31,8 +31,18 @@ const options = [
     </p>
     <form class="form" id="form-contact">
       <Input id="form-name" label="Nombre Completo" placeholder="Tu nombre" />
-      <Input id="form-email" label="Email" placeholder="example@example.com" />
-      <Input id="form-phone" label="Teléfono" placeholder="+54 11 2345 6789" />
+      <Input
+        id="form-email"
+        label="Email"
+        placeholder="example@example.com"
+        type="email"
+      />
+      <Input
+        id="form-phone"
+        label="Teléfono"
+        placeholder="+54 11 2345 6789"
+        type="tel"
+      />
       <Select
         id="form-subject"
         label="Asunto"
@@ -54,3 +64,30 @@ const options = [
 <style>
   @import url("./form-contact.css");
 </style>
+
+<script>
+  /** IMPLEMENTAR ENVÍO DE CORREO */
+  import { $ } from "@/core/lib/dom-selector";
+
+  const form = $("#form-contact")! as HTMLFormElement;
+  const name = $("#form-name")!;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("form-name"),
+      email: formData.get("form-email"),
+      phone: formData.get("form-phone"),
+      subject: formData.get("form-subject"),
+      message: formData.get("form-message"),
+    };
+
+    clearForm();
+  });
+
+  function clearForm() {
+    form.reset();
+    name.focus();
+  }
+</script>

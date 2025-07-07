@@ -42,6 +42,8 @@ const options = [
         label="Teléfono"
         placeholder="+54 11 2345 6789"
         type="tel"
+        regex="^\\+?\\d{7,15}$"
+        title="Ingrese un número válido de teléfono (7 a 15 dígitos, puede iniciar con +)"
       />
       <Select
         id="form-subject"

@@ -6,6 +6,8 @@ const {
   placeholder = "",
   required = true,
   maxlength = 50,
+  regex,
+  title,
 } = Astro.props;
 ---
 
@@ -19,6 +21,8 @@ const {
     required={required}
     class="input"
     maxlength={maxlength}
+    pattern={regex}
+    title={title}
   />
 </label>
 

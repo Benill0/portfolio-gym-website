@@ -80,7 +80,6 @@ const options = [
 
     const formData = new FormData(form);
 
-    // Paso 1: Obtén los datos originales
     const rawData = {
       name: formData.get("form-name"),
       email: formData.get("form-email"),
@@ -89,7 +88,6 @@ const options = [
       message: formData.get("form-message"),
     };
 
-    // Paso 2: Crea versión limpia (todos los campos son string)
     const data = {
       name: rawData.name?.toString().trim() || "",
       email: rawData.email?.toString().trim() || "",
@@ -98,7 +96,6 @@ const options = [
       message: rawData.message?.toString().trim() || "",
     };
 
-    // Paso 3: Validaciones
     const errors: string[] = [];
 
     if (!data.name) errors.push("- El nombre es obligatorio.");

@@ -47,6 +47,11 @@ section {
   }
 }
 
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 @media (width >= 48rem) {
   /* Medium devices (md) - >= 48rem (>= 768px) */
   .form {

@@ -56,7 +56,7 @@ const options = [
         label="Mensaje"
         placeholder="Cuéntanos como podemos ayudarte..."
       />
-      <button type="submit" class="button">
+      <button type="submit" class="button" id="button-contact">
         <Send size={18} /> Enviar Mensaje</button
       >
     </form>
@@ -74,6 +74,7 @@ const options = [
 
   const form = $("#form-contact")! as HTMLFormElement;
   const name = $("#name")! as HTMLInputElement;
+  const button = $("#button-contact")! as HTMLButtonElement;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -124,6 +125,10 @@ const options = [
       return;
     }
 
+    button.disabled = true;
+    button.textContent = "Enviando...";
+    button.classList.add("loading");
+
     await fetch("/api/contact", {
       method: "POST",
       body: formData,
@@ -141,6 +146,11 @@ const options = [
           description: "Por favor, intenta nuevamente.",
           type: "error",
         });
+      })
+      .finally(() => {
+        button.disabled = false;
+        button.textContent = "Enviar Mensaje";
+        button.classList.remove("loading");
       });
   });
 

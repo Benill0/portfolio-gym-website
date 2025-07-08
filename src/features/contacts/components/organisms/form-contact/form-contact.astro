@@ -31,28 +31,28 @@ const options = [
       posible.
     </p>
     <form class="form" id="form-contact">
-      <Input id="form-name" label="Nombre Completo" placeholder="Tu nombre" />
+      <Input id="name" label="Nombre Completo" placeholder="Tu nombre" />
       <Input
-        id="form-email"
+        id="email"
         label="Email"
         placeholder="example@example.com"
         type="email"
       />
       <Input
-        id="form-phone"
+        id="phone"
         label="Teléfono"
         placeholder="+54 11 2345 6789"
         regex="^\\+?\\d{7,15}$"
         title="Ingrese un número válido de teléfono (7 a 15 dígitos, puede iniciar con +)"
       />
       <Select
-        id="form-subject"
+        id="subject"
         label="Asunto"
         options={options}
         placeholder="Seleccione un asunto"
       />
       <Textarea
-        id="form-message"
+        id="message"
         label="Mensaje"
         placeholder="Cuéntanos como podemos ayudarte..."
       />
@@ -73,19 +73,19 @@ const options = [
   import { $ } from "@/core/lib/dom-selector";
 
   const form = $("#form-contact")! as HTMLFormElement;
-  const name = $("#form-name")! as HTMLInputElement;
+  const name = $("#name")! as HTMLInputElement;
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
 
     const rawData = {
-      name: formData.get("form-name"),
-      email: formData.get("form-email"),
-      phone: formData.get("form-phone"),
-      subject: formData.get("form-subject"),
-      message: formData.get("form-message"),
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
     };
 
     const data = {
@@ -124,12 +124,24 @@ const options = [
       return;
     }
 
-    Toast.show({
-      title: "Mensaje Enviado",
-      description: "Pronto nos pondremos en contacto",
-    });
-
-    clearForm();
+    await fetch("/api/contact", {
+      method: "POST",
+      body: formData,
+    })
+      .then(() => {
+        Toast.show({
+          title: "Mensaje Enviado",
+          description: "Pronto nos pondremos en contacto",
+        });
+        clearForm();
+      })
+      .catch(() => {
+        Toast.show({
+          title: "Error al enviar el mensaje",
+          description: "Por favor, intenta nuevamente.",
+          type: "error",
+        });
+      });
   });
 
   function clearForm() {

@@ -20,7 +20,7 @@ const links = [
 
 <header>
   <div class="wrapper">
-    <a href="/" aria-label="logo">
+    <a href="/" aria-label="logo header">
       <Image src={Logo} alt="logo" class="logotipo-header" priority />
     </a>
     <div class="wrapper-nav">
@@ -29,6 +29,7 @@ const links = [
           links.map((link) => (
             <a
               href={link.href}
+              aria-label={link.label}
               data-active={link.active}
               aria-current={link.active ? "page" : undefined}
             >
@@ -37,7 +38,7 @@ const links = [
           ))
         }
       </nav>
-      <button class="button"> Únete Ahora </button>
+      <button class="button" aria-label="button header"> Únete Ahora </button>
     </div>
     <button
       id="menu-button-hamburger"

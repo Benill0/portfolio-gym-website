@@ -13,11 +13,24 @@ const { name, comment, imageUrl } = Astro.props;
 
 <article class="card-testimonial">
   <header class="header">
-    <Image src={imageUrl} alt={name} width={68} height={68} class="avatar" />
+    <Image
+      src={imageUrl}
+      alt={name}
+      width={68}
+      height={68}
+      class="avatar"
+      aria-label="avatar"
+    />
     <div class="wrapper-info">
       <h3>{name}</h3>
-      <ul>
-        {Array.from({ length: 5 }, (_, index) => <Star size={14} />)}
+      <ul class="rating">
+        {
+          Array.from({ length: 5 }, (_, index) => (
+            <li>
+              <Star size={14} />
+            </li>
+          ))
+        }
       </ul>
     </div>
   </header>

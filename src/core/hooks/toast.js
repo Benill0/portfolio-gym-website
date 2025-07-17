@@ -36,6 +36,8 @@ export const Toast = (() => {
     toastElement.setAttribute("data-position", position);
     toastElement.setAttribute("data-type", type);
 
+    titleElement.setAttribute("data-type", type);
+    descriptionElement.setAttribute("data-type", type);
     // Mostrar el toast con la animación de entrada
     toastElement.classList.add("show");
 

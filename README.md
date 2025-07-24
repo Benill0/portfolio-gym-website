@@ -98,7 +98,7 @@ Si deseas contribuir al proyecto, sigue estos pasos:
    git commit -am 'Agregada nueva funcionalidad'
 
 5. Haz push a la rama:
-  ```bash
+   ```bash
    git push origin feature/nueva-funcionalidad
 
 ## Licencia

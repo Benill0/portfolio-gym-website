@@ -102,6 +102,5 @@ Si deseas contribuir al proyecto, sigue estos pasos:
    git push origin feature/nueva-funcionalidad
 
 ## Licencia
-
 Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
 
